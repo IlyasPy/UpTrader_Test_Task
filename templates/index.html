@@ -1,7 +1,11 @@
 {% if categories %}
     <ul>
         {% for category in categories %}
-        <li>{{ category.name }}</li>
+            <li>{{ category.category_name }}</li>
+            <li>{% for sub in category.parent_category.all %}
+                {{ sub.sub_name }}
+                {{ sub.parent_sub.all }}
+            {% endfor %}</li>
         {% endfor %}
     </ul>
 {% endif %}

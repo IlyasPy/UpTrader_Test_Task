@@ -28,7 +28,7 @@ class SubCategory(models.Model):
 
 
 class Product(models.Model):
-    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, related_name='parent_sub')
     product_name = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
 
